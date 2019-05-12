@@ -1,6 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', 'gs://jvasoftware-build-cache', '/builder/home/.cache']
 - name: 'gcr.io/cloud-builders/npm'
   args: ['ci']
 - name: 'gcr.io/cloud-builders/npm'
