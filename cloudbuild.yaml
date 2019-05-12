@@ -1,5 +1,7 @@
 steps:
 - name: 'gcr.io/jvasoftware-151518/cypress'
   args: ['ci']
+  dir: '/root'
 - name: 'gcr.io/jvasoftware-151518/cypress'
   args: [ 'run', 'ci:build' ]
+  dir: '/root'
