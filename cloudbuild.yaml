@@ -1,6 +1,5 @@
 steps:
 - name: 'gcr.io/$PROJECT_ID/cypress'
   args: ['ci']
-  env: ['CYPRESS_CACHE_FOLDER=/root/.cache/Cypress']
 - name: 'gcr.io/$PROJECT_ID/cypress'
   args: [ 'run', 'ci:build' ]
