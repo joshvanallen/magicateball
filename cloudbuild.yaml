@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
+- name: 'gcr.io/jvasoftware-151518/cypress'
   args: ['ci']
-- name: 'gcr.io/cloud-builders/npm'
+- name: 'gcr.io/jvasoftware-151518/cypress'
   args: [ 'run', 'ci:build' ]
