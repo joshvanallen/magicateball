@@ -1,7 +1,11 @@
 steps:
 - name: 'gcr.io/jvasoftware-151518/cypress'
+  volumes:
+  - name: 'root'
+  - path: '/root'
   args: ['ci']
-  dir: '/root'
 - name: 'gcr.io/jvasoftware-151518/cypress'
+  volumes:
+  - name: 'root'
+  - path: '/root'
   args: [ 'run', 'ci:build' ]
-  dir: '/root'
