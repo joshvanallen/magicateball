@@ -1,8 +1,9 @@
 steps:
-- name: 'gcr.io/jvasoftware-151518/cypress'
-  entrypoint: 'cypress'
-  args: ['verify']
-- name: 'gcr.io/jvasoftware-151518/cypress'
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', 'gs://jvasoftware-build-cache', '/builder/home/.cache']
+- name: 'gcr.io/cloud-builders/npm'
   args: ['ci']
-- name: 'gcr.io/jvasoftware-151518/cypress'
+- name: 'gcr.io/cloud-builders/npm'
   args: [ 'run', 'ci:build' ]
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '-r', '/builder/home/.cache', 'gs://jvasoftware-build-cache']
