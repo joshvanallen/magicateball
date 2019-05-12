@@ -1,7 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
+- name: 'gcr.io/$PROJECT_ID/cypress'
   args: ['ci']
-- name: 'gcr.io/cloud-builders/npm'
+- name: 'gcr.io/$PROJECT_ID/cypress'
   args: [ 'run', 'ci:build' ]
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '-r', '/builder/home/.cache', 'gs://jvasoftware-build-cache']
