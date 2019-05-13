@@ -31,5 +31,5 @@ branch_build:
   only:
     - master
   script: 
-  - npm run affected:build -- --all
+  - npm run ci:build
 
