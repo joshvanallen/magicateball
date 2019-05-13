@@ -11,11 +11,10 @@ cache:
     - cache/Cypress
     
 stages:
-  - checkout
   - build
 
-checkout_job:
-  stage: checkout
+checkout:
+  stage: build
   script: git fetch origin master:refs/remotes/origin/master
 install:
   stage: build
