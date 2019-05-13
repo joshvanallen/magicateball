@@ -11,10 +11,22 @@ cache:
     - cache/Cypress
     
 stages:
+  - checkout
+  - install
   - build
 
-build:
-  stage: build
+checkout:
+  stage: checkout
   script: 
-  - npm ci
-  - npm run ci:build
+    - git fetch origin master
+install:
+  stage: install
+    - npm ci
+
+branch_build:
+  stage: build
+  only:
+    ref: master
+  script: 
+  - npm run affected:build -- --all
+
