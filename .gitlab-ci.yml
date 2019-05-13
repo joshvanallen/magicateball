@@ -12,14 +12,8 @@ cache:
     - node_modules
     
 stages:
-  - checkout
   - install
   - build
-
-checkout:
-  stage: checkout
-  script: 
-    - git fetch --force origin "master:remotes/origin/master"
     
 install:
   stage: install
@@ -31,5 +25,6 @@ branch_build:
   only:
     - master
   script: 
+  - git fetch --force origin "master:remotes/origin/master"
   - npm run ci:build
 
