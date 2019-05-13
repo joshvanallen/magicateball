@@ -6,5 +6,6 @@ before_script:
 stages:
   - build
 
-stage: build
+job:
+  stage: build
   script: npm run ci:build
