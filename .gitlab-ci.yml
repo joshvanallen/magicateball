@@ -17,6 +17,9 @@ stages:
 checkout_job:
   stage: checkout
   script: git fetch origin master:refs/remotes/origin/master
+install:
+  stage: build
+  script: npm ci
 build_job:
   stage: build
   script: npm run ci:build
