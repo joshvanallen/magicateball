@@ -19,7 +19,7 @@ stages:
 checkout:
   stage: checkout
   script: 
-    - git fetch origin master
+    - git fetch --force origin "master:remotes/origin/master"
     
 install:
   stage: install
