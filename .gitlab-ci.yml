@@ -1,0 +1,10 @@
+image: node:latest
+
+before_script:
+  - npm ci --silent
+
+stages:
+  - build
+
+stage: build
+  script: npm run ci:build
