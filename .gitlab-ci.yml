@@ -16,6 +16,5 @@ stages:
 build:
   stage: build
   script: 
-  - git fetch origin master
   - npm ci
   - npm run ci:build
