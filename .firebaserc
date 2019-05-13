@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "jvasoftware-151518"
+  },
+  "targets": {
+    "jvasoftware-151518": {
+      "hosting": {
+        "angular": [
+          "jvasoftware-151518"
+        ],
+        "react": [
+          "magicateball-react"
+        ]
+      }
+    }
+  }
+}

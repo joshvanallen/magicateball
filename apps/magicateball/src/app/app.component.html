@@ -1,25 +1,33 @@
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
-</div>
-
-<p>This is an Angular app built with <a href="https://nx.dev">Nx</a>.</p>
-<p>🔎 **Nx is a set of Angular CLI power-ups for modern development.**</p>
-
-<h2>Quick Start & Documentation</h2>
-
-<ul>
-  <li>
-    <a href="https://nx.dev/getting-started/what-is-nx"
-      >30-minute video showing all Nx features</a
-    >
-  </li>
-  <li>
-    <a href="https://nx.dev/tutorial/01-create-application"
-      >Interactive tutorial</a
-    >
-  </li>
-</ul>
+<mat-toolbar
+  color="primary"
+  style="position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 2;"
+>
+  <mat-toolbar-row>
+    <span>Magic Ate Ball</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container
+  style="display: flex;
+flex-direction: column; flex:1;    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: hidden;"
+>
+  <mat-sidenav mode="over" position="end">something</mat-sidenav>
+  <mat-sidenav-content style="padding:1rem;">
+    <mat-form-field style="width:25%">
+        <input type="text" #autocomplete [formControl]="addressFormControl" placeholder="Address" matInput class="location-autocomplete"/>
+    </mat-form-field>
+  <div>
+    <label>Radius: {{radiusValue ? radiusValue + ' miles' : ''}}</label>
+    <mat-slider [(ngModel)]="radiusValue" style="display: block;" thumbLabel step=".1" tickInterval=".1" max="25"></mat-slider>
+  </div>
+  
+</mat-sidenav-content>
+</mat-sidenav-container>
