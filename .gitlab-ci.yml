@@ -9,10 +9,7 @@ cache:
   paths:
     - .npm
     - cache/Cypress
-
-before_script:
-  - npm ci --silent
-
+    
 stages:
   - checkout
   - build
