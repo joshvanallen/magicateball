@@ -19,14 +19,16 @@ checkout:
   stage: checkout
   script: 
     - git fetch origin master
+    
 install:
   stage: install
+  script:
     - npm ci
 
 branch_build:
   stage: build
   only:
-    ref: master
+    - master
   script: 
   - npm run affected:build -- --all
 
