@@ -14,15 +14,16 @@ import { FormControl } from '@angular/forms';
   selector: 'jva-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('autocomplete')
   autocompleteInput: ElementRef<HTMLInputElement>;
   public radiusValue:number;
-  public addressFormControl: FormControl = new FormControl();
+  public addressFormControl: string;
   private autocomplete: google.maps.places.Autocomplete;
   private currentPlaceId;
+  value = 'Clear me';
 
   constructor(private mapsAPILoader: MapsAPILoader, private cdr:ChangeDetectorRef) {}
 
@@ -37,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             }
           }, (response)=>{
             if(response && response.length > 0){
-              this.addressFormControl.setValue(response[0].formatted_address);
+              this.addressFormControl = response[0].formatted_address;
               this.currentPlaceId = response[0].place_id;
               this.cdr.markForCheck();
             }

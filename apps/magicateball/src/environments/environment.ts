@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  gcpAPIKey: 'AIzaSyC_PCZYlPVUPeLdZpuRhug2oLSNKwxGbns'
+  gcpAPIKey: ''
 };
 
 /*
