@@ -13,36 +13,42 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'jva-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('autocomplete', { static: false })
   autocompleteInput: ElementRef<HTMLInputElement>;
-  public radiusValue:number;
+  public radiusValue: number;
   public addressFormControl: string;
   private autocomplete: google.maps.places.Autocomplete;
   private currentPlaceId;
   value = 'Clear me';
 
-  constructor(private mapsAPILoader: MapsAPILoader, private cdr:ChangeDetectorRef) {}
+  constructor(
+    private mapsAPILoader: MapsAPILoader,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.mapsAPILoader.load().then(() => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(info => {
-          new google.maps.Geocoder().geocode({
-            location: {
-              lat: info.coords.latitude,
-              lng: info.coords.longitude
+          new google.maps.Geocoder().geocode(
+            {
+              location: {
+                lat: info.coords.latitude,
+                lng: info.coords.longitude
+              }
+            },
+            response => {
+              if (response && response.length > 0) {
+                this.addressFormControl = response[0].formatted_address;
+                this.currentPlaceId = response[0].place_id;
+                this.cdr.markForCheck();
+              }
             }
-          }, (response)=>{
-            if(response && response.length > 0){
-              this.addressFormControl = response[0].formatted_address;
-              this.currentPlaceId = response[0].place_id;
-              this.cdr.markForCheck();
-            }
-          })
+          );
         });
       }
       this.autocomplete = new google.maps.places.Autocomplete(

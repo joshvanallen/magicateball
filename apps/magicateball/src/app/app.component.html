@@ -22,15 +22,28 @@ flex-direction: column; flex:1;    position: relative;
   <mat-sidenav mode="over" position="end">something</mat-sidenav>
   <mat-sidenav-content style="padding:1rem;">
     <mat-form-field style="width:100%">
-        <input type="text" #autocomplete cdkTextareaAutosize [(ngModel)]="addressFormControl" placeholder="Address" matInput class="location-autocomplete"/>
+      <input
+        type="text"
+        #autocomplete
+        cdkTextareaAutosize
+        [(ngModel)]="addressFormControl"
+        placeholder="Address"
+        matInput
+        class="location-autocomplete"
+      />
     </mat-form-field>
-    <mat-form-field class="example-form-field">
-      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value">
-    </mat-form-field>
-  <div>
-    <label>Radius: {{radiusValue ? radiusValue + ' miles' : '0 miles'}}</label>
-    <mat-slider [(ngModel)]="radiusValue" style="display: block;" thumbLabel step=".1" tickInterval=".1" max="25"></mat-slider>
-  </div>
-  
-</mat-sidenav-content>
+    <div>
+      <label
+        >Radius: {{ radiusValue ? radiusValue + ' miles' : '0 miles' }}</label
+      >
+      <mat-slider
+        [(ngModel)]="radiusValue"
+        style="display: block;"
+        thumbLabel
+        step=".1"
+        tickInterval=".1"
+        max="25"
+      ></mat-slider>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>
