@@ -1,8 +1,8 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/out-tsc/apps/magicateball"
-  },
-  "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
-  "include": ["**/*.ts"]
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc/apps/magicateball"
+    },
+    "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
+    "include": ["**/*.ts"]
 }

@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Magicateball</title>
-    <base href="/"/>
+    <head>
+        <meta charset="utf-8" />
+        <title>Magicateball</title>
+        <base href="/" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1976d2">
-</head>
-  <body>
-    <jva-root style="    display: flex;
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="manifest" href="manifest.json" />
+        <meta name="theme-color" content="#1976d2" />
+    </head>
+    <body>
+        <style>
+            jva-root {
+                top: 64px;
+            }
+            @media (max-width: 599px) {
+                jva-root {
+                    top: 56px;
+                }
+            }
+        </style>
+        <jva-root
+            style="    display: flex;
     flex-direction: column;
     position: absolute;
-    top: 64px;
     bottom: 0;
     left: 0;
-    right: 0;"></jva-root>
-    <noscript>Please enable JavaScript to continue using this application.</noscript>
-</body>
+    right: 0;"
+        ></jva-root>
+        <noscript
+            >Please enable JavaScript to continue using this
+            application.</noscript
+        >
+    </body>
 </html>
