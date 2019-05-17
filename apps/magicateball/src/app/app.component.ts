@@ -17,7 +17,7 @@ import { FormControl } from '@angular/forms';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('autocomplete')
+  @ViewChild('autocomplete', { static: false })
   autocompleteInput: ElementRef<HTMLInputElement>;
   public radiusValue:number;
   public addressFormControl: string;
