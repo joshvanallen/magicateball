@@ -24,7 +24,8 @@
             "tsConfig": "apps/magicateball/tsconfig.app.json",
             "assets": [
               "apps/magicateball/src/favicon.ico",
-              "apps/magicateball/src/assets"
+              "apps/magicateball/src/assets",
+              "apps/magicateball/src/manifest.json"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -56,7 +57,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/magicateball/ngsw-config.json"
             }
           }
         },
