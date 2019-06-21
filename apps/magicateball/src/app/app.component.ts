@@ -3,10 +3,11 @@ import {
     OnInit,
     ViewChild,
     ElementRef,
-    ChangeDetectorRef,
-    ApplicationRef
+    ApplicationRef,
+    HostListener
 } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+import { MatSnackBarRef, MatSnackBar, SimpleSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'jva-root',
@@ -23,12 +24,14 @@ export class AppComponent implements OnInit {
     private autocomplete: google.maps.places.Autocomplete;
     private currentPlaceId: google.maps.LatLng;
     private milesToMeters: number = 0.00062137;
+    private offlineSnackBar: MatSnackBarRef<SimpleSnackBar>;
 
     private filteredResults: any[] = [];
 
     constructor(
         private mapsAPILoader: MapsAPILoader,
-        private appRef: ApplicationRef
+        private appRef: ApplicationRef,
+        private matSnackBar:MatSnackBar
     ) {}
 
     ngOnInit() {
@@ -122,5 +125,17 @@ export class AppComponent implements OnInit {
         );
         console.log(this.filteredResults[randNum].name);
         this.appRef.tick();
+    }
+
+    @HostListener('window:online')
+    onlineMessage(){
+        if(this.offlineSnackBar){
+            this.offlineSnackBar.dismiss();
+        }
+    }
+
+    @HostListener('window:offline')
+    offlineMessage(){
+        this.offlineSnackBar = this.matSnackBar.open('You are currently offline. Features may not be available.')
     }
 }
