@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -10,20 +10,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AgmCoreModule } from '@agm/core';
 
-import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { AppComponent } from './app.component';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        BrowserModule,
-        CommonModule,
         BrowserAnimationsModule,
         MatToolbarModule,
         MatSidenavModule,
