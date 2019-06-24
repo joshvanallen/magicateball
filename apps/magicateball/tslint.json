@@ -2,6 +2,7 @@
     "extends": "../../tslint.json",
     "rules": {
         "directive-selector": [true, "attribute", "jva", "camelCase"],
-        "component-selector": [true, "element", "jva", "kebab-case"]
+        "component-selector": [true, "element", "jva", "kebab-case"],
+        "no-inferrable-types":false
     }
 }
